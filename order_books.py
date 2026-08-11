@@ -106,23 +106,3 @@ class MarketMaker:
             self.inventory -= quantity 
             self.cash += price*quantity
         
-
-
-mm = MarketMaker()
-order_book = OrderBook()
-
-# 1. First quote (Inventory = 0)
-mm.quote(order_book, 10, 2)
-print("Book after 1st quote:")
-print(order_book)
-# Expected: Bid @ 9, Ask @ 11
-
-# 2. Simulate MM getting filled on a buy
-mm.on_fill('buy', price=9, quantity=2)
-print(f"MM Position -> Inventory: {mm.inventory}, Cash: {mm.cash}")
-
-# 3. Second quote (Inventory = 2)
-mm.quote(order_book, fair_value=10, spread=2)
-print("Book after 2nd quote (skewed down):")
-print(order_book)
-# Expected: Skewed Bid @ 8, Skewed Ask @ 10
