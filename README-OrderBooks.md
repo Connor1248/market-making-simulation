@@ -1,6 +1,6 @@
 # Simple Limit Order Book & Market Maker Engine
 
-A lightweight Python implementation of a Limit Order Book (LOB) engine with price-time priority matching and an inventory-aware Market Maker agent.
+A lightweight Python Limit Order Book (LOB) engine with a Market Maker agent.
 
 ---
 
